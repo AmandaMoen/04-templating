@@ -6,6 +6,7 @@ let articleView = {};
 
 // COMMENT: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
 // PUT YOUR RESPONSE HERE
+// Arrow functions do not create their own scope so they get contextual this from the parent context, because of that, contextual this may break when refactored to an arrow function
 
 articleView.populateFilters = function() {
   $('article').each(function() {
