@@ -6,9 +6,9 @@ let articleView = {};
 
 // COMMENT: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
 // PUT YOUR RESPONSE HERE
-// Arrow functions do not create their own scope so they get contextual this from the parent context, because of that, contextual this may break when refactored to an arrow function
+// Arrow functions do not create their own scope so they get contextual this from the parent context, because of that, contextual this may break when refactored to an arrow function.
 
-articleView.populateFilters = function() {
+articleView.populateFilters = () => {
   $('article').each(function() {
     if (!$(this).hasClass('template')) {
       let val = $(this).find('address a').text();
@@ -27,7 +27,7 @@ articleView.populateFilters = function() {
   });
 };
 
-articleView.handleAuthorFilter = function() {
+articleView.handleAuthorFilter = () => {
   $('#author-filter').on('change', function() {
     if ($(this).val()) {
       $('article').hide();
@@ -40,7 +40,7 @@ articleView.handleAuthorFilter = function() {
   });
 };
 
-articleView.handleCategoryFilter = function() {
+articleView.handleCategoryFilter = () => {
   $('#category-filter').on('change', function() {
     if ($(this).val()) {
       $('article').hide();
@@ -53,7 +53,7 @@ articleView.handleCategoryFilter = function() {
   });
 };
 
-articleView.handleMainNav = function() {
+articleView.handleMainNav = () => {
   $('nav').on('click', '.tab', function(e) {
     e.preventDefault();
     $('.tab-content').hide();
@@ -63,7 +63,7 @@ articleView.handleMainNav = function() {
   $('nav .tab:first').click();
 };
 
-articleView.setTeasers = function() {
+articleView.setTeasers = () => {
   $('.article-body *:nth-of-type(n+2)').hide();
   $('article').on('click', 'a.read-on', function(e) {
     e.preventDefault();
@@ -80,10 +80,10 @@ articleView.setTeasers = function() {
   });
 };
 
-$(document).ready(function() {
+$(document).ready(() => {
   articleView.populateFilters();
   articleView.handleCategoryFilter();
   articleView.handleAuthorFilter();
   articleView.handleMainNav();
   articleView.setTeasers();
-})
+});
