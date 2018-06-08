@@ -20,20 +20,20 @@
       -->
   
     <script id="article-template" type="text/x-handlebars-template">
-    <article class="template" data-category="cat">
-      <header>
-        <h1>{{title}}</h1>
-          <div class="byline">
-            By <address><a href="{{authorUrl}}">{{author}}</a></address>
-            published on <time pubdate datetime="2000-01-01">{{publishedOn}}</time>
-          </div>
-      </header>
-      <div class="article-body">
-        {{{body}}}
-      </div>
-      <a href="#" class="read-on">Read on &rarr;</a>
-      <hr>
-    </article>
+      <article data-category="{{category}}" data-author="{{author}}">
+        <header>
+          <h1>{{title}}</h1>
+            <section class="byline">
+              By <address><a href="{{authorUrl}}">{{author}}</a></address>
+              published on <time pubdate datetime="2000-01-01">{{publishedOn}}</time>
+            </section>
+        </header>
+        <div class="article-body">
+          {{{body}}}
+        </div>
+        <a href="#" class="read-on">Read on &rarr;</a>
+        <hr>
+      </article>
     </script>
   </head>
   <body>
